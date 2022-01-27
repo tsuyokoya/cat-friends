@@ -1,19 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Card from './Card';
 import reportWebVitals from './reportWebVitals';
-import { cats } from './cats';
+import CardList from './CardList';
+//has pre-defined class names to add css to components
+import 'tachyons';
 
 //what actually renders to the DOM
 ReactDOM.render(
-  //adding properties to the Card component
-  <Card id={cats[0].id} name = {cats[0].name} email = {cats[0].email}/>,
+  <CardList />,
   document.getElementById('root')
 );
-
-
-
 
 
 

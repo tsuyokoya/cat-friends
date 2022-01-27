@@ -2,9 +2,9 @@ import React from 'react';
 
 const Card = (props) => {
 
-  //returns a card component with cat detail
+  //returns a single card component with cat detail
   return (
-    <div>
+    <div className = 'bg-light-blue dib br3 pa3 ma2 grow bw2 shadow-5'>
       <img src={`https://robohash.org/${props.id}?set=set4`} alt="cats" />
       <h2>{props.name}</h2>
       <p>{props.email}</p>
@@ -13,16 +13,3 @@ const Card = (props) => {
 }
 
 export default Card;
-
-// return (
-//   cats.map((cat,i) => {
-//     return (
-//       <div>
-//         <img src={`https://robohash.org/${cats[i].id}?set=set4`} alt="cats" />
-//         <h2>{cats[i].name}</h2>
-//         <p>{cats[i].email}</p>
-//       </div>
-//     )
-//   })
-
-// )
