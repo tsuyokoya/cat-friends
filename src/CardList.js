@@ -1,9 +1,8 @@
 import React from 'react';
 import Card from './Card';
-import { cats } from './cats';
 
 //Looops through each cat to generate a Card for each
-const CardList = () => {
+const CardList = ({ cats }) => {
 
   return (
     cats.map((cat,i) => {

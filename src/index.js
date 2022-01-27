@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import CardList from './CardList';
+import App from './App';
 //has pre-defined class names to add css to components
 import 'tachyons';
 
 //what actually renders to the DOM
 ReactDOM.render(
-  <CardList />,
+  <App />,
   document.getElementById('root')
 );
 
