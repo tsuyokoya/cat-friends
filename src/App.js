@@ -10,9 +10,17 @@ class App extends React.Component{
   constructor(){
     super();
     this.state = {
-      cats: cats,
+      cats: [],
       searchfield: ''
     }
+  }
+
+  componentDidMount(){
+    //fetch receives a response from api
+    fetch('https://jsonplaceholder.typicode.com/users')
+    //convert response to JSON
+    .then(response => response.json())
+    .then(users => this.setState({cats: users}))
   }
 
   //anytime you make own method on component, use arrow function
@@ -32,14 +40,18 @@ class App extends React.Component{
       return cat.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
     })
 
-    return (
-      <div className = 'tc'>
-        <h1 className = 'f1'>Cat Friends</h1>
-        <SearchBox searchChange = {this.onSearchChange}/>
-        <CardList cats={ filteredCats }/>
-      </div>
-
-    )
+    //if json placeholder api is slow, add in Loading text
+    if(this.state.cats.length === 0) {
+      return <h1>Loading</h1>
+    } else {
+      return (
+        <div className = 'tc'>
+          <h1 className = 'f1'>Cat Friends</h1>
+          <SearchBox searchChange = {this.onSearchChange}/>
+          <CardList cats={ filteredCats }/>
+        </div>
+      )
+    }
   }
 
 }
