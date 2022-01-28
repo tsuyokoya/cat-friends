@@ -3,6 +3,7 @@ import CardList from './CardList';
 import SearchBox from './SearchBox';
 import { cats } from './cats';
 import './App.css';
+import Scroll from './Scroll';
 
 //any component with state uses class syntax
 class App extends React.Component{
@@ -48,7 +49,10 @@ class App extends React.Component{
         <div className = 'tc'>
           <h1 className = 'f1'>Cat Friends</h1>
           <SearchBox searchChange = {this.onSearchChange}/>
-          <CardList cats={ filteredCats }/>
+          <Scroll>
+            <CardList cats={ filteredCats }/>
+          </Scroll>
+
         </div>
       )
     }
