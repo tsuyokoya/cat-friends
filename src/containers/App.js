@@ -1,9 +1,8 @@
 import React from 'react';
-import CardList from './CardList';
-import SearchBox from './SearchBox';
-import { cats } from './cats';
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
 import './App.css';
-import Scroll from './Scroll';
+import Scroll from '../components/Scroll';
 
 //any component with state uses class syntax
 class App extends React.Component{
@@ -42,7 +41,7 @@ class App extends React.Component{
     })
 
     //if json placeholder api is slow, add in Loading text
-    if(this.state.cats.length === 0) {
+    if(!this.state.cats.length) {
       return <h1>Loading</h1>
     } else {
       return (

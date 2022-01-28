@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import App from './App';
+import App from './containers/App';
 //has pre-defined class names to add css to components
 import 'tachyons';
 
